@@ -1,0 +1,124 @@
+* {
+    color: #000;
+}
+
+i {
+    color: deeppink;
+}
+
+h1 {
+    color: rgb(255, 161, 47);
+    text-align: center;
+    font-size: 29px;
+    text-transform: capitalize;
+}
+
+h2 {
+    color: rgb(152, 251, 155);
+    font-size: 20px;
+}
+
+h3 {
+    color: #ff0000;
+    font-size: large;
+}
+
+h4,
+h5 {
+    color: slateblue;
+    text-decoration: unset;
+}
+
+p {
+    color: black;
+    font-size: small;
+    font-weight: 550;
+    font-style: italic;
+    font-family: sans-serif;
+    text-transform: capitalize;
+}
+
+.p1 {
+    color: rgb(153, 20, 153);
+    font-weight: bold;
+    text-indent: 10px;
+}
+
+.p2 {
+    color: #ff0000;
+    font-weight: bold;
+    text-indent: 10px;
+}
+
+span {
+    color: rgb(80, 255, 135);
+}
+
+.color-a {
+    color: cyan;
+}
+
+.color-b {
+    color: green;
+}
+
+
+.color-r {
+    color: rgb(255, 161, 47);
+}
+
+.size-a {
+    font-size: small;
+}
+
+.size-b {
+    font-size: x-small;
+}
+
+.size-c {
+    font-size: medium;
+}
+
+.size-d {
+    font-size: large;
+}
+
+.size-e {
+    font-size: x-large;
+}
+
+.size-f {
+    font-size: 30px;
+}
+
+.size-g {
+    font-size: 35px;
+}
+
+.box1 {
+    width: 1000px;
+    height: 200px;
+    background-color: #fff000;
+}
+
+.box2 {
+    width: 1500px;
+    height: 15px;
+    background-color: rgb(65, 212, 225);
+    background-image: url(daimao.jpg);
+    background-repeat: repeat;
+    background-size: 15px, 15px;
+    background-position: left top;
+}
+
+
+#text {
+    color: rgb(255, 161, 47);
+    font-size: 40px;
+}
+
+#login {
+    color: rgb(30, 182, 22);
+    font-size: 23px;
+    text-align: center;
+}
