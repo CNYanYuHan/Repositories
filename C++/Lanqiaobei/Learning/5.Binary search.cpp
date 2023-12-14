@@ -9,11 +9,11 @@ int main() {
 
   int tar = 5;
 
-  bool found = binary_search(num.begin(),num.end(),tar);
-  if(found){
-    cout << "Target target "<<tar<<"is found.";
-    cout << "Target target"<<tar<<"is not found.";
+  bool found = binary_search(num.begin(), num.end(), tar);
+  if (found) {
+    cout << "Target target " << tar << " is found.";
+  } else {
+    cout << "Target target " << tar << " is not found.";
   }
-
   return 0;
 }
