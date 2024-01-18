@@ -1,23 +1,23 @@
 
 #include <stdio.h>
-
-int main() {
-  float a, b;
-  char c;
-  /***********Begin**********/
-  scanf("%f%c%f", &a, &c, &b);
-  if (c == '+') {
-    printf("%f", a + b);
-  } else if (c == '-') {
-    printf("%f", a - b);
-  } else if (c == '*') {
-    printf("%f", a * b);
-  } else if (c == '/') {
-    printf("%f\n", a / b);
-  } else {
-    printf("Input error");
+void fun(char *s) {
+  int i, j = 0;
+  for (i = 0; s[i] != '\0'; i++){
+    if (s[i] != 'c')
+    /********found********/
+    {
+      s[j] = s[i];
+      j++;
+    }
+    else{
+      continue;
+    }
   }
-
-  /***********End**********/
-  return 0;
+  /********found********/
+}
+void main() {
+  char s[80];
+  gets(s);
+  fun(s);
+  puts(s);
 }
