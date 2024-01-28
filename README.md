@@ -9,13 +9,13 @@
 
 #### 安装教程
 
-1.  xxxx
+1.  clone
 2.  xxxx
 3.  xxxx
 
 #### 使用说明
 
-1.  无
+1.  clone it
 2.  xxxx
 3.  xxxx
 
