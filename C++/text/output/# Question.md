@@ -21,7 +21,7 @@ public:
     Boat(int w) : weight(w) {}
     friend int getTotalWeight(Boat b, Car c);
 };
-
+/*6666*/
 class Car {
 private:
     int weight;
