@@ -2,40 +2,64 @@
 
 using namespace std;
 
-int N, M;
-int com_cnt = 0, swap_cnt = 0;
+class Book {
+private:
+  string name;
+  int count;
 
-void Shell_Sort(int *arr, int *dk) {
-  int dk_tmp, i, j;
-  int temp;
-  for (dk_tmp = 1; dk_tmp <= M; dk_tmp++) {
-    int index = dk[dk_tmp];
-    for (i = index + 1; i <= N; i++) {
-      j = i;
-      temp = arr[j];
-      //注意此处的写法：
-      //先判断j>index，若满足则com_cnt++，若不满足则直接退出循环
-      //若顺序颠倒则发生错误
-      while (j > index && ++com_cnt && temp < arr[j - index]) {
-        arr[j] = arr[j - index];
-        j = j - index;
-        swap_cnt++; //每循环一次即进行一次交换操作，swap_cnt+1
-      }
-      arr[j] = temp;
+public:
+  Book(string name, int count = 0) {
+    this->name = name; // this指明了数据成员，即Book类的成员变量name和count。
+    this->count = count;
+  } //构造函数，默认参数为0,是特殊的成员函数。不定义构造函数依然会有默认构造函数，但默认构造函数不能带参数。
+  void set_name(const string &name) { //常量引用参数 name，类型为const
+    // string，这意味着传入的字符串不可被修改，并且通过引用传递可以提高效率。这样做的好处是能够在不复制
+    // string
+    //对象的情况下，安全地访问它的值，因而避免了不必要的性能损耗。
+    //这样做的好处是能够在不复制(函数不创建参数的副本)string对象的情况下，安全地访问它的值，因而避免了不必要的性能损耗。
+    this->name = name;
+  }
+  void set_count(const int count) {
+    if (count < 0) {
+      count = 0;
+    }
+    this->count = count;
+  }
+  string get_name()const { return name; }
+  int get_count() const { //只读函数；
+    // 1.const string get_name()：这表示函数 get_name 返回一个
+    // const 类型的 string 对象。这意味着调用该函数返回的 string
+    //对象是不可修改的，但并不表示这个函数本身不会修改类的成员变量。
+
+    // 2.string
+    // get_name()const：在这里，const放在函数的尾部，表示这是一个常量成员函数。它承诺在函数调用过程中不会修改类的任何成员变量，即函数可以安全地在一个常量对象上调用。
+    return count;
+  }
+
+  void add_count() { count++; }
+  void remove_count() {
+    if (count > 0) {
+      count--;
     }
   }
-}
+};
 
 int main() {
-  cin >> N >> M;
-  int *dk = (int *)malloc(sizeof(int) * (M + 3));
-  for (int i = 1; i <= M; i++)
-    cin >> dk[i];
-  int *arr = (int *)malloc(sizeof(int) * (N + 3));
-  for (int i = 1; i <= N; i++)
-    cin >> arr[i];
+  Book book1("高等数学"), book2("大学英语");
 
-  Shell_Sort(arr, dk);
-  cout << com_cnt << " " << swap_cnt << endl;
+  cout << book1.get_name() << "书的数量为：" << book1.get_count() << endl;
+  cout << book2.get_name() << "书的数量为：" << book2.get_count() << endl;
+
+  book1.set_count(10);
+  book2.set_count(20);
+
+  book1.add_count();
+  book2.remove_count();
+  book1.add_count();
+  book2.remove_count();
+
+  cout << book1.get_name() << "书的数量为：" << book1.get_count() << endl;
+  cout << book2.get_name() << "书的数量为：" << book2.get_count() << endl;
+
   return 0;
 }
